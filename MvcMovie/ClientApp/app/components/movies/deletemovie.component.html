@@ -1,0 +1,47 @@
+﻿<h2>Delete</h2>
+
+<a asp-action="Index" class="btn btn-default">Back to List</a>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Title:
+        </dt>
+        <dd>
+            
+        </dd>
+        <dt>
+            Release Year:
+        </dt>
+        <dd>
+            <
+        </dd>
+        <dt>
+            Genre:
+        </dt>
+        <dd>
+            
+        </dd>
+        <dt>
+            Price:
+        </dt>
+        <dd>
+            
+        </dd>
+        <dt>
+            Rating:
+        </dt>
+        <dd>
+            
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+
+        <input type="hidden" asp-for="movie.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" />
+        <a asp-action="Index" class="btn btn-default">Back to List</a>
+    </form>
+</div>
