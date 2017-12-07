@@ -8,7 +8,7 @@ import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { MoviesComponent } from './components/movies/movies.component';
-import { CreateMovieComponent } from './components/createmovie/createmovie.component';
+import { CreateMovieComponent } from './components/movies/createmovie.component';
 
 @NgModule({
     declarations: [

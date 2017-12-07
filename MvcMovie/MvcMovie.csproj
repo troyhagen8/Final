@@ -21,12 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\app\components\createmovie\createmovie.component.ts" />
     <None Remove="ClientApp\app\components\movies\movies.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\components\createmovie\createmovie.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\movies\createmovie.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\movies\movies.component.ts" />
   </ItemGroup>
 

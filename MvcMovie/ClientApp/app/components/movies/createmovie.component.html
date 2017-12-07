@@ -2,29 +2,29 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form name="formcreatemovie" >
+        <form name="formcreatemovie" #movieForm="ngForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label class="control-label">Title: </label>
-                <input class="form-control" name="title"/>
+                <input class="form-control" name="title" [(ngModel)]="model.title"/>
             </div>
             <div class="form-group">
                 <label class="control-label">Rating: </label>
-                <input class="form-control" name="rating"/>
+                <input class="form-control" name="rating" [(ngModel)]="model.rating"/>
             </div>
             <div class="form-group">
                 <label class="control-label">Release Year: </label>
-                <input class="form-control" name="releaseDate"/>
+                <input class="form-control" name="releaseDate" [(ngModel)]="model.releaseDate"/>
             </div>
             <div class="form-group">
                 <label class="control-label">Genre: </label>
-                <input class="form-control" name="genre"/>
+                <input class="form-control" name="genre" [(ngModel)]="model.genre"/>
             </div>
             <div class="form-group">
                 <label class="control-label">Price: </label>
-                <input class="form-control" name="price"/>
+                <input class="form-control" name="price" [(ngModel)]="model.price"/>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" onclick="create()"/>
+                <input type="submit" class="btn btn-default"/>
             </div>
         </form>
     </div>
