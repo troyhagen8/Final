@@ -1,0 +1,37 @@
+﻿<h1>Movie List</h1>
+
+<p *ngIf="!movies"><em>Loading...</em></p>
+
+<a [routerLink]="['/createmovie']">
+    <span></span> Create New
+</a>
+
+<table class="table" *ngIf="movies">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Publication Year</th>
+            <th>Genre</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of movies">
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.releaseDate }}</td>
+            <td>{{ movie.genre }}</td>
+            <td>{{ movie.price | currency:'USD':true}}</td>
+            <td>{{ movie.rating}}</td>
+            <td>
+            <a class="btn btn-default" [routerLink]="['/movies']">
+                <span></span> Edit
+            </a>
+            <a class="btn btn-default" [routerLink]="['/movies']">
+                <span></span> Delete
+            </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
