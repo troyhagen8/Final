@@ -1,7 +1,5 @@
 ﻿<h2>Delete</h2>
 
-<a asp-action="Index" class="btn btn-default">Back to List</a>
-
 <h3>Are you sure you want to delete this?</h3>
 <div>
     <hr />
@@ -10,38 +8,41 @@
             Title:
         </dt>
         <dd>
-            
+            {{ movie.title }}
         </dd>
         <dt>
             Release Year:
         </dt>
         <dd>
-            <
+            {{ movie.releaseDate}}
         </dd>
         <dt>
             Genre:
         </dt>
         <dd>
-            
+            {{ movie.genre }}
         </dd>
         <dt>
             Price:
         </dt>
         <dd>
-            
+            {{ movie.price}}
         </dd>
         <dt>
             Rating:
         </dt>
         <dd>
-            
+            {{ movie.rating }}
         </dd>
     </dl>
 
-    <form asp-action="Delete">
+    <form (ngSubmit)="Delete()">
 
-        <input type="hidden" asp-for="movie.ID" />
         <input type="submit" value="Delete" class="btn btn-default" />
-        <a asp-action="Index" class="btn btn-default">Back to List</a>
+
+        <a class="btn btn-default" [routerLink]="['/movies']">
+            <span></span> Cancel
+        </a>
+
     </form>
 </div>

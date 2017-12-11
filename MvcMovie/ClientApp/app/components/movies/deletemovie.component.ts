@@ -11,8 +11,9 @@ import { ActivatedRoute } from '@angular/router'
 export class DeleteMovieComponent {
 
     public movie: Movie;
+    delResult: Object;
 
-    constructor(http: Http, @Inject('BASE_URL') baseUrl: string, route: ActivatedRoute) {
+    constructor(private http: Http, @Inject('BASE_URL') private baseUrl: string, private route: ActivatedRoute, private router: Router) {
         let id = route.snapshot.params['id'];
         http.get(baseUrl + 'api/Movies/' + id).subscribe(result => {
             this.movie = result.json() as Movie;
@@ -20,11 +21,16 @@ export class DeleteMovieComponent {
         );
     }
 
-    onSubmit(form: NgForm) {
+    Delete() {
 
-        //this.http.delete(this.baseUrl + 'api/Movies', JSON.stringify(this.model)).subscribe(result => {
-        //     this.router.navigate(['/movies']);
-        //    });
+        console.log("Deleting: " + this.movie.title + " ID: " + this.movie.id +
+            " Rating: " + this.movie.rating + " Year: " + this.movie.releaseDate +
+            " Genre: " + this.movie.genre + " Price: " + this.movie.price);
+
+        this.http.delete(this.baseUrl + 'api/Movies/' + this.movie.id, this.movie).subscribe(result => {
+                this.delResult = result;
+                this.router.navigate(['/movies']);
+            });
     }
 
 

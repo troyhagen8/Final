@@ -29,7 +29,7 @@ import { DeleteMovieComponent } from './components/movies/deletemovie.component'
             { path: 'home', component: HomeComponent },
             { path: 'movies', component: MoviesComponent },
             { path: 'createmovie', component: CreateMovieComponent },
-            { path: 'deletemovie', component: DeleteMovieComponent },
+            { path: 'deletemovie/:id', component: DeleteMovieComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
