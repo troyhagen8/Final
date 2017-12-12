@@ -5,13 +5,13 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router'
 
 @Component({
-    selector: 'deletemovie',
-    templateUrl: './deletemovie.component.html'
+    selector: 'editmovie',
+    templateUrl: './editmovie.component.html'
 })
-export class DeleteMovieComponent {
+export class EditMovieComponent {
 
     public movie: Movie;
-    delResult: Object;
+    putResult: Object;
 
     constructor(private http: Http, @Inject('BASE_URL') private baseUrl: string, private route: ActivatedRoute, private router: Router) {
         let id = route.snapshot.params['id'];
@@ -21,16 +21,17 @@ export class DeleteMovieComponent {
         );
     }
 
-    Delete() {
+    onSubmit() {
 
-        console.log("Deleting: " + this.movie.title + " ID: " + this.movie.id +
+        console.log("Editing: " + this.movie.title + " ID: " + this.movie.id +
             " Rating: " + this.movie.rating + " Year: " + this.movie.releaseDate +
             " Genre: " + this.movie.genre + " Price: " + this.movie.price);
+        let hdrs = new Headers({ 'Content-Type': 'application/json' });
 
-        this.http.delete(this.baseUrl + 'api/Movies/' + this.movie.id, JSON.stringify(this.movie)).subscribe(result => {
-                this.delResult = result;
-                this.router.navigate(['/movies']);
-            });
+        this.http.put(this.baseUrl + 'api/Movies/' + this.movie.id, this.movie).subscribe(result => {
+            this.putResult = result;
+            this.router.navigate(['/movies']);
+        });
     }
 
 

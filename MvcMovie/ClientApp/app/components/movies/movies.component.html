@@ -25,7 +25,7 @@
             <td>{{ movie.price | currency:'USD':true}}</td>
             <td>{{ movie.rating}}</td>
             <td>
-            <a class="btn btn-default" [routerLink]="['/movies']">
+            <a class="btn btn-default" [routerLink]="['/editmovie/', movie.id]">
                 <span></span> Edit
             </a>
             <a class="btn btn-default" [routerLink]="['/deletemovie/', movie.id]">

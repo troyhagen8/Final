@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { CreateMovieComponent } from './components/movies/createmovie.component';
 import { DeleteMovieComponent } from './components/movies/deletemovie.component';
+import { EditMovieComponent } from './components/movies/editmovie.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { DeleteMovieComponent } from './components/movies/deletemovie.component'
         HomeComponent,
         MoviesComponent,
         CreateMovieComponent,
-        DeleteMovieComponent
+        DeleteMovieComponent,
+        EditMovieComponent
     ],
     imports: [
         CommonModule,
@@ -30,6 +32,7 @@ import { DeleteMovieComponent } from './components/movies/deletemovie.component'
             { path: 'movies', component: MoviesComponent },
             { path: 'createmovie', component: CreateMovieComponent },
             { path: 'deletemovie/:id', component: DeleteMovieComponent },
+            { path: 'editmovie/:id', component: EditMovieComponent},
             { path: '**', redirectTo: 'home' }
         ])
     ]
