@@ -6,6 +6,14 @@
     <span></span> Create New
 </a>
 
+
+<form name="formsearchmovie" #movieForm="ngForm" (ngSubmit)="filter()">
+    <span>Search filter: </span>
+    <input name="searchTerm" [(ngModel)]="searchTerm" />
+    <input type="submit" class="btn btn-default" />
+</form>
+
+
 <table class="table" *ngIf="movies">
     <thead>
         <tr>
@@ -17,21 +25,21 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let movie of movies">
-            <td>{{ movie.title }}</td>
-            <td>{{ movie.releaseDate }}</td>
-            <td>{{ movie.genre }}</td>
-            <td>{{ movie.price | currency:'USD':true}}</td>
-            <td>{{ movie.rating}}</td>
-            <td>
-            <a class="btn btn-default" [routerLink]="['/editmovie/', movie.id]">
-                <span></span> Edit
-            </a>
-            <a class="btn btn-default" [routerLink]="['/deletemovie/', movie.id]">
-                <span></span> Delete
-            </a>
-            </td>
-        </tr>
+    <tbody>        
+            <tr *ngFor="let movie of movies">
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.releaseDate }}</td>
+                <td>{{ movie.genre }}</td>
+                <td>{{ movie.price | currency:'USD':true}}</td>
+                <td>{{ movie.rating}}</td>
+                <td>
+                    <a class="btn btn-default" [routerLink]="['/editmovie/', movie.id]">
+                        <span></span> Edit
+                    </a>
+                    <a class="btn btn-default" [routerLink]="['/deletemovie/', movie.id]">
+                        <span></span> Delete
+                    </a>
+                </td>
+            </tr>
     </tbody>
 </table>
