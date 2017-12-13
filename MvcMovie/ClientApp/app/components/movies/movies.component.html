@@ -1,7 +1,5 @@
 ﻿<h1>Movie List</h1>
 
-<p *ngIf="!movies"><em>Loading...</em></p>
-
 <a [routerLink]="['/createmovie']">
     <span></span> Create New
 </a>
@@ -13,6 +11,7 @@
     <input type="submit" class="btn btn-default" />
 </form>
 
+<p *ngIf="!movies"><em>Loading...</em></p>
 
 <table class="table" *ngIf="movies">
     <thead>

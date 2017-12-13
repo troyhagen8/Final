@@ -11,9 +11,9 @@ export class CreateMovieComponent {
     model = new Movie();
     postResult: Object;
 
-    constructor(private http: Http, @Inject('BASE_URL') private baseUrl: string, private router: Router) { }
+    constructor(public http: Http, @Inject('BASE_URL') public baseUrl: string, public router: Router) { }
 
-    onSubmit(form: NgForm) {
+    onSubmit() {
         console.log("Submitted: " + this.model.title + " ID: " + this.model.id +
             " Rating: " + this.model.rating + " Year: " + this.model.releaseDate +
             " Genre: " + this.model.genre + " Price: " + this.model.price);
